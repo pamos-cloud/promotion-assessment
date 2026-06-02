@@ -245,6 +245,26 @@
     ::-webkit-scrollbar-track { background: transparent; }
     ::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 3px; }
     ::-webkit-scrollbar-thumb:hover { background: #94a3b8; }
+
+    @media print {
+      * { overflow: visible !important; max-height: none !important; height: auto !important; }
+      body { display: block !important; height: auto !important; overflow: visible !important; }
+      .loading-overlay, .sidebar, .header-actions,
+      .level-popover, .modal-overlay, .toast, .drop-zone, .attachments-grid { display: none !important; }
+      .app-header { position: static; box-shadow: none; padding: 10px 16px; page-break-inside: avoid; }
+      .header-fields { flex-wrap: wrap; }
+      .header-field input { border: none; background: transparent !important; color: black !important; font-size: 13px; padding: 2px 0; }
+      .app-body { display: block !important; }
+      .main { padding: 12px 16px; overflow: visible !important; }
+      .area-section { page-break-inside: avoid; margin-top: 24px; }
+      .char-card { page-break-inside: avoid; margin-bottom: 12px; box-shadow: none; border: 1px solid #ccc; }
+      .char-card-body { display: flex !important; }
+      .editor-body { min-height: unset !important; max-height: none !important; overflow: visible !important; border: none; padding: 8px 0; font-size: 12px; }
+      .editor-wrapper { border: none !important; }
+      .editor-toolbar { display: none !important; }
+      .expand-btn { display: none; }
+      .level-select { border: 1px solid #ccc !important; background: white !important; font-size: 11px; }
+    }
   </style>
 </head>
 <body>
